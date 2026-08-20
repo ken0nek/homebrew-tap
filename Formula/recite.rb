@@ -1,8 +1,8 @@
 class Recite < Formula
   desc "Copy a command and its output as a pasteable console block"
   homepage "https://github.com/ken0nek/recite"
-  url "https://github.com/ken0nek/recite/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "2f5a91e6542a7593ffb04171ddeed1a0a316381d2d364c080d9b7c374084f25c"
+  url "https://github.com/ken0nek/recite/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "c0cc5da620814b21e9f9a504f3324f759f31bf4df72c9cd5f70be0f05040d6ca"
   license "MIT"
   head "https://github.com/ken0nek/recite.git", branch: "main"
 
