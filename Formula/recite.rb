@@ -20,9 +20,19 @@ class Recite < Formula
 
           bind alt-enter __recite_submit
 
-      On macOS the Option key must arrive as Alt: Ghostty needs
-      `macos-option-as-alt`; Terminal.app "Use Option as Meta Key"; iTerm2
-      per-profile. The `cmd 2>&1 | recite` form needs no binding.
+      If alt-enter does nothing, macOS terminals break it in two unrelated
+      ways. Terminal.app composes Option into a character, so the shell sees a
+      bare enter: tick Settings > Profiles > Keyboard > "Use Option as Meta
+      Key". WezTerm sends the modifier correctly but keeps the keystroke for
+      Toggle Full Screen; release it in wezterm.lua:
+
+          config.keys = {
+            { key = 'Enter', mods = 'ALT',
+              action = wezterm.action.DisableDefaultAssignment },
+          }
+
+      Ghostty and iTerm2 need no setting. The `cmd 2>&1 | recite` form needs
+      no binding at all.
     EOS
   end
 
