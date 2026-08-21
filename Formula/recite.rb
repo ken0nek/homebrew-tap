@@ -22,7 +22,7 @@ class Recite < Formula
 
       The `cmd 2>&1 | recite` form needs no binding in either shell.
 
-      If alt-enter does nothing, macOS terminals break it in two unrelated
+      If alt-enter does nothing, macOS terminals break it in three unrelated
       ways. Terminal.app composes Option into a character, so the shell sees a
       bare enter: tick Settings > Profiles > Keyboard > "Use Option as Meta
       Key". WezTerm sends the modifier correctly but keeps the keystroke for
@@ -33,7 +33,10 @@ class Recite < Formula
               action = wezterm.action.DisableDefaultAssignment },
           }
 
-      Ghostty and iTerm2 need no setting.
+      iTerm2 needs nothing for fish, but sends zsh no bytes at all: set
+      Settings > Profiles > Keys > General > "Left option key" to Esc+.
+
+      Ghostty needs no setting in either shell.
     EOS
   end
 
