@@ -1,8 +1,8 @@
 class Recite < Formula
   desc "Copy a command and its output as a pasteable console block"
   homepage "https://github.com/ken0nek/recite"
-  url "https://github.com/ken0nek/recite/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "a5c78874817d1547685b3417b61569d50fd50fe4de1a4655799fbbf778406274"
+  url "https://github.com/ken0nek/recite/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "4745cd370ac7440f1d39af99fc30999836dd3fbc241da928b456f22c0f85bd8f"
   license "MIT"
   head "https://github.com/ken0nek/recite.git", branch: "main"
 
@@ -45,6 +45,6 @@ class Recite < Formula
     assert_equal "```console\n$ echo hi\nhi\n```\n",
       pipe_output("#{core} --as 'echo hi'", "hi\n")
     assert_match "[REDACTED]", pipe_output(core.to_s, "key=sk-abc123\n")
-    assert_match(/recite-core\s+0\.2\.0/, shell_output("#{bin}/recite --version"))
+    assert_match(/recite-core\s+0\.3\.0/, shell_output("#{bin}/recite --version"))
   end
 end
